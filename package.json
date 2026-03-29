@@ -1,0 +1,24 @@
+{
+  "name": "action-mcp-test",
+  "version": "0.1.0",
+  "description": "GitHub Action to test MCP servers in CI",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "ncc build src/index.ts -o dist",
+    "test": "node --test src/**/*.test.ts",
+    "lint": "tsc --noEmit"
+  },
+  "keywords": ["mcp", "model-context-protocol", "testing", "github-action", "ci"],
+  "author": "renezander030",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "@actions/github": "^6.0.0",
+    "@modelcontextprotocol/sdk": "^1.12.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.3",
+    "typescript": "^5.7.0",
+    "@types/node": "^22.0.0"
+  }
+}

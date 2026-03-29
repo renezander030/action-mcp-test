@@ -1,0 +1,41 @@
+name: 'MCP Server Test'
+description: 'Test MCP servers in CI — protocol compliance, schema validation, tool smoke-testing'
+author: 'renezander030'
+
+branding:
+  icon: 'check-circle'
+  color: 'green'
+
+inputs:
+  command:
+    description: 'Command to start the MCP server (stdio transport)'
+    required: false
+  url:
+    description: 'URL of a running MCP server (Streamable HTTP transport)'
+    required: false
+  config:
+    description: 'Path to mcp-test.yml config file for tool smoke-tests'
+    required: false
+    default: 'mcp-test.yml'
+  timeout:
+    description: 'Timeout in seconds for server startup and each test'
+    required: false
+    default: '30'
+  skip:
+    description: 'Comma-separated list of test categories to skip (lifecycle,tools,resources,prompts)'
+    required: false
+    default: ''
+
+outputs:
+  passed:
+    description: 'Number of tests passed'
+  failed:
+    description: 'Number of tests failed'
+  score:
+    description: 'Compliance score (0-100)'
+  report:
+    description: 'Path to the JSON test report'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
