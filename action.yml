@@ -1,4 +1,4 @@
-name: 'MCP Server Test'
+name: 'MCP Protocol Compliance Test'
 description: 'Test MCP servers in CI — protocol compliance, schema validation, tool smoke-testing'
 author: 'renezander030'
 
